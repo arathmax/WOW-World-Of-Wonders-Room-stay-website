@@ -1,1 +1,0 @@
-<h1>USER ROOM LIST PAGE</h1>;

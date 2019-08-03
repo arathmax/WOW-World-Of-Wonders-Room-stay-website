@@ -1,1 +1,9 @@
-<h1>USER HOME PAGE</h1>;
+const express = require("express");
+
+const router = express.Router();
+
+router.get("/user", (req, res) => {
+  res.render("Home/homeuser");
+});
+
+module.exports = router;

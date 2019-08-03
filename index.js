@@ -18,14 +18,14 @@ mongoose
 
 //import routes
 const adminLoginRoute = require("./routes/AdminLogin");
-const adminPageRoute = require("./routes/AdminPage");
+// const adminPageRoute = require("./routes/AdminPage");
 const guestHomeRoute = require("./routes/GuestHome");
-const guestViewRoomRoute = require("./routes/GuestViewRoom");
-const guestRoomListRoute = require("./routes/GuestRoomList");
-const userSignupRoute = require("./routes/UserSignup");
-const userHomeRoute = require("./routes/UserHome");
-const userViewRoomRoute = require("./routes/UserViewRoom");
-const userRoomListRoute = require("./routes/UserRoomList");
+// const guestViewRoomRoute = require("./routes/GuestViewRoom");
+// const guestRoomListRoute = require("./routes/GuestRoomList");
+// const userSignupRoute = require("./routes/UserSignup");
+// const userHomeRoute = require("./routes/UserHome");
+// const userViewRoomRoute = require("./routes/UserViewRoom");
+// const userRoomListRoute = require("./routes/UserRoomList");
 
 //this creates the express object. THIS OBJECT
 const app = express();
@@ -48,16 +48,16 @@ app.use(express.static("public"));
 
 //This loads all your route modules
 app.use("/", guestHomeRoute);
-app.use("/guest_view_room", guestViewRoomRoute);
-app.use("/guest_room_list", guestRoomListRoute);
+// app.use("/guest_view_room", guestViewRoomRoute);
+// app.use("/guest_room_list", guestRoomListRoute);
 
-app.use("/user_signup", userSignupRoute);
-app.use("/user", userHomeRoute);
-app.use("/user_view_room", userViewRoomRoute);
-app.use("/user_room_list", userRoomListRoute);
+// app.use("/user_signup", userSignupRoute);
+// app.use("/user", userHomeRoute);
+// app.use("/user_view_room", userViewRoomRoute);
+// app.use("/user_room_list", userRoomListRoute);
 
-app.use("/admin_login", adminLoginRoute);
-app.use("/admin_page", adminPageRoute);
+// app.use("/admin_login", adminLoginRoute);
+// app.use("/admin_page", adminPageRoute);
 
 const port = 3000;
 app.listen(port, () => {
