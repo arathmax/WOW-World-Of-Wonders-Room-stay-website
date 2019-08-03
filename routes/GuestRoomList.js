@@ -1,0 +1,1 @@
+<h1>GUEST ROOM LIST PAGE</h1>;
