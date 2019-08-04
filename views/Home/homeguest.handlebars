@@ -6,8 +6,8 @@
                 Browse our Most Popular Rentals...</p>
             <div class="dropdown-divider"></div>
             <nav class="navbar navbar-dark text-white bg-dark mx-auto">
-                <form class="form-inline col-12 ">
-                    <div class="form-row col-7">
+                <form method="GET" action="/guest_room_list" class="form-inline col-12 ">
+                    <div class="form-row col-8">
                         <select id="inputState" class="form-control col">
                             <option selected>Select Your City...</option>
                             <option> <a class="dropdown-item" href="#">Toronto</a></option>
@@ -15,7 +15,7 @@
                             <option> <a class="dropdown-item" href="#">Brampton</a></option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-info col-5">Search</button>
+                    <button type="submit" class="btn btn-info col-4">Search</button>
                 </form>
             </nav>
         </div>

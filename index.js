@@ -21,7 +21,7 @@ const adminLoginRoute = require("./routes/AdminLogin");
 const adminPageRoute = require("./routes/AdminPage");
 const guestHomeRoute = require("./routes/GuestHome");
 // const guestViewRoomRoute = require("./routes/GuestViewRoom");
-// const guestRoomListRoute = require("./routes/GuestRoomList");
+const guestRoomListRoute = require("./routes/GuestRoomList");
 const userSignupRoute = require("./routes/UserSignup");
 const userHomeRoute = require("./routes/UserHome");
 // const userViewRoomRoute = require("./routes/UserViewRoom");
@@ -45,11 +45,11 @@ app.set("view engine", "handlebars");
 
 // //This code is needed to load all static files (images,css,js)
 app.use(express.static("public"));
-
+app.use(express.static("public/images"));
 //This loads all your route modules
 app.use("/", guestHomeRoute);
 // app.use("/guest_view_room", guestViewRoomRoute);
-// app.use("/guest_room_list", guestRoomListRoute);
+app.use("/guest_room_list", guestRoomListRoute);
 
 app.use("/user_signup", userSignupRoute);
 app.use("/user", userHomeRoute);
