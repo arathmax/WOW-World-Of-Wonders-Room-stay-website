@@ -17,8 +17,8 @@ mongoose
   });
 
 //import routes
-// const adminLoginRoute = require("./routes/AdminLogin");
-// const adminPageRoute = require("./routes/AdminPage");
+const adminLoginRoute = require("./routes/AdminLogin");
+const adminPageRoute = require("./routes/AdminPage");
 const guestHomeRoute = require("./routes/GuestHome");
 // const guestViewRoomRoute = require("./routes/GuestViewRoom");
 // const guestRoomListRoute = require("./routes/GuestRoomList");
@@ -56,8 +56,8 @@ app.use("/user", userHomeRoute);
 // app.use("/user_view_room", userViewRoomRoute);
 // app.use("/user_room_list", userRoomListRoute);
 
-// app.use("/admin_login", adminLoginRoute);
-// app.use("/admin_page", adminPageRoute);
+app.use("/admin_login", adminLoginRoute);
+app.use("/admin_page", adminPageRoute);
 
 const port = 3000;
 app.listen(port, () => {

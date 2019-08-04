@@ -22,12 +22,12 @@ const userSchema = new Schema({
   },
 
   password: {
-    type: Password,
+    type: String,
     required: true
   },
 
   email: {
-    type: Email,
+    type: String,
     required: true
   },
 

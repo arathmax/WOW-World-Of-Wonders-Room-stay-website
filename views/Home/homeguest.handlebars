@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="col-4 bg-dark">
-        <form class="px-4 py-3">
+        <form method="GET" action="/user" class="px-4 py-2">
             <div class="form-group">
                 <label for="exampleDropdownFormEmail1">Username</label>
                 <input type="text" class="form-control" placeholder="Enter Username">
@@ -33,10 +33,12 @@
             <button type="submit" class="btn btn-outline-info btn-block btn-sm">Sign
                 in</button>
         </form>
-        <form class="px-4 py-3" method="GET" action="/user_signup">
+        <form class="px-4 py-1" method="GET" action="/user_signup">
             <button type="submit" class="btn btn-outline-info btn-sm btn-block">New
                 to WOW ? Signup</button>
         </form>
-
+        <form class="px-4 py-1" method="GET" action="/admin_login">
+            <button type="submit" class="btn btn-outline-danger btn-sm btn-block">Sign in as Admin</button>
+        </form>
     </div>
 </div>
