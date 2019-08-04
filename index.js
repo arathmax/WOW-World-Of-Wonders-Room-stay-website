@@ -25,7 +25,7 @@ const guestRoomListRoute = require("./routes/GuestRoomList");
 const userSignupRoute = require("./routes/UserSignup");
 const userHomeRoute = require("./routes/UserHome");
 // const userViewRoomRoute = require("./routes/UserViewRoom");
-// const userRoomListRoute = require("./routes/UserRoomList");
+const userRoomListRoute = require("./routes/UserRoomList");
 
 //this creates the express object. THIS OBJECT
 const app = express();
@@ -54,7 +54,7 @@ app.use("/guest_room_list", guestRoomListRoute);
 app.use("/user_signup", userSignupRoute);
 app.use("/user", userHomeRoute);
 // app.use("/user_view_room", userViewRoomRoute);
-// app.use("/user_room_list", userRoomListRoute);
+app.use("/user_room_list", userRoomListRoute);
 
 app.use("/admin_login", adminLoginRoute);
 app.use("/admin_page", adminPageRoute);
