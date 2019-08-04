@@ -22,7 +22,7 @@ mongoose
 const guestHomeRoute = require("./routes/GuestHome");
 // const guestViewRoomRoute = require("./routes/GuestViewRoom");
 // const guestRoomListRoute = require("./routes/GuestRoomList");
-// const userSignupRoute = require("./routes/UserSignup");
+const userSignupRoute = require("./routes/UserSignup");
 const userHomeRoute = require("./routes/UserHome");
 // const userViewRoomRoute = require("./routes/UserViewRoom");
 // const userRoomListRoute = require("./routes/UserRoomList");
@@ -33,17 +33,17 @@ const app = express();
 // override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
 
-// parse application/x-www-form-urlencoded
+// // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// parse application/json
+// // parse application/json
 app.use(bodyParser.json());
 
-//This forces express to set handlebars as it's template engine
+// //This forces express to set handlebars as it's template engine
 app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
 
-//This code is needed to load all static files (images,css,js)
+// //This code is needed to load all static files (images,css,js)
 app.use(express.static("public"));
 
 //This loads all your route modules
@@ -51,7 +51,7 @@ app.use("/", guestHomeRoute);
 // app.use("/guest_view_room", guestViewRoomRoute);
 // app.use("/guest_room_list", guestRoomListRoute);
 
-// app.use("/user_signup", userSignupRoute);
+app.use("/user_signup", userSignupRoute);
 app.use("/user", userHomeRoute);
 // app.use("/user_view_room", userViewRoomRoute);
 // app.use("/user_room_list", userRoomListRoute);

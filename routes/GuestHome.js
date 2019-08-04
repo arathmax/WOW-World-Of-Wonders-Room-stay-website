@@ -6,8 +6,8 @@ router.get("/", (req, res) => {
   res.render("Home/homeguest");
 });
 
-// router.get("/admin_login", (req, res) => {
-//   res.render("Admin/adminlogin");
-// });
+router.get("/user", (req, res) => {
+  res.render("Home/homeuser");
+});
 
 module.exports = router;
