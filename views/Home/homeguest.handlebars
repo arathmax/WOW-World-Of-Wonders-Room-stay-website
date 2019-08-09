@@ -21,14 +21,15 @@
         </div>
     </div>
     <div class="col-4 bg-dark">
-        <form method="GET" action="/user" class="px-4 py-2">
+        <form method="POST" action="/user" class="px-4 py-2">
             <div class="form-group">
                 <label for="exampleDropdownFormEmail1">Username</label>
-                <input type="text" class="form-control" placeholder="Enter Username">
+                <input type="text" name="username" class="form-control" placeholder="Enter Username">
             </div>
             <div class="form-group">
                 <label for="exampleDropdownFormPassword1">Password</label>
-                <input style="margin-bottom: 2em;" type="password" class="form-control" placeholder="Enter Password">
+                <input style="margin-bottom: 2em;" type="password" name="password" class="form-control"
+                    placeholder="Enter Password">
             </div>
             <button type="submit" class="btn btn-outline-info btn-block btn-sm">Sign
                 in</button>

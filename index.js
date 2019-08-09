@@ -3,6 +3,7 @@ const exphbs = require("express-handlebars");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
+const session = require("express-session");
 
 const url = "mongodb://localhost:27017/wow-data";
 
@@ -39,6 +40,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // // parse application/json
 app.use(bodyParser.json());
 
+// Use the session middleware
+app.use(session({ secret: "keyboard cat", cookie: { maxAge: 60000 } }));
+
 // //This forces express to set handlebars as it's template engine
 app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
@@ -47,6 +51,13 @@ app.set("view engine", "handlebars");
 app.use(express.static("public"));
 app.use(express.static("public/images"));
 //This loads all your route modules
+
+app.use((req, res, next) => {
+  res.locals.userInfo = req.session.userInfo;
+
+  next();
+});
+
 app.use("/", guestHomeRoute);
 // app.use("/guest_view_room", guestViewRoomRoute);
 app.use("/guest_room_list", guestRoomListRoute);
