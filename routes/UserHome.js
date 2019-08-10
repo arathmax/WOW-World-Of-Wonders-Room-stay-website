@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 
-const User = mongoose.model("Users", userSchema);
+const User = mongoose.model("users", userSchema);
 module.exports = router;
 router.post("/", (req, res) => {
   const errors = [];
@@ -16,7 +16,7 @@ router.post("/", (req, res) => {
   }
 
   if (req.body.password === "") {
-    errors.push("You must enter a last name");
+    errors.push("You must enter password");
   }
 
   //THE IF MEANS THAT AN ERROR(S) OCCURED, THUS SHOW ERORS
@@ -73,3 +73,5 @@ router.post("/", (req, res) => {
 //   req.session.destroy();
 //   res.redirect("/");
 // });
+
+module.exports = router;
