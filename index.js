@@ -21,6 +21,7 @@ mongoose
 //import routes
 const adminLoginRoute = require("./routes/AdminLogin");
 const adminPageRoute = require("./routes/AdminPage");
+
 const guestHomeRoute = require("./routes/GuestHome");
 // const guestViewRoomRoute = require("./routes/GuestViewRoom");
 const guestRoomListRoute = require("./routes/GuestRoomList");
