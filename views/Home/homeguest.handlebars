@@ -1,6 +1,3 @@
-{{#each errors}}
-<div class="error"> {{this}} </div>
-{{/each}}
 <div class="form-row text-white bg-dark">
     <div class="col-8">
         <div class="jumbotron text-white bg-dark">
@@ -26,6 +23,7 @@
     <div class="col-4 bg-dark">
         <form method="POST" action="/user" class="px-4 py-2">
             <div class="form-group">
+
                 <label>Username</label>
                 <input type="text" name="username" id="username" value="{{username}}" class="form-control"
                     placeholder="Enter Username">
@@ -35,6 +33,9 @@
                 <input style="margin-bottom: 2em;" type="password" name="password" class="form-control"
                     placeholder="Enter Password">
             </div>
+            {{#each errors}}
+            <div class="error"> {{this}} </div>
+            {{/each}}
             <button type="submit" class="btn btn-outline-info btn-block btn-sm">Sign
                 in</button>
         </form>

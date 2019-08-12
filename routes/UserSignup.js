@@ -81,6 +81,54 @@ router.post("/", (req, res) => {
         new User(userData)
           .save()
           .then(() => {
+            var nodemailer = require("nodemailer");
+            var sgTransport = require("nodemailer-sendgrid-transport");
+
+            // api key https://sendgrid.com/docs/Classroom/Send/api_keys.html
+            var options = {
+              auth: {
+                api_user: "Sunnyskp",
+                api_key: "sunnykrishnanpillai123"
+              }
+            };
+
+            var mailer = nodemailer.createTransport(sgTransport(options));
+
+            var email = {
+              to: [req.body.email],
+              from: "skp2june@gmail.com",
+              subject: `Welcome ${
+                req.body.firstName
+              }, to the World of wonders. Explore the world..!!!`,
+              text: `Welcome ${
+                req.body.firstName
+              }, to the World of wonders. Explore the world..!!!`,
+              html: `<b>Welcome ${
+                req.body.firstName
+              }, to the World of wonders. Explore the world..!!!</b>`
+            };
+
+            mailer.sendMail(email, function(err, res) {
+              if (err) {
+                console.log(err);
+              }
+              console.log(res);
+            });
+
+            const accountSid = "AC7e66a80561656e8fe864f1c583fd08a6";
+            const authToken = "d7e089fcd946c736dd91a612096b0970";
+            const client = require("twilio")(accountSid, authToken);
+
+            client.messages
+              .create({
+                body: `WELCOME TO WORLD OF WONDERS ${
+                  req.body.firstName
+                }. Explore the world..!!!`,
+                from: "+17787641238",
+                to: "+14377723637"
+              })
+              .then(message => console.log(message.sid));
+
             res.redirect("/");
           })
           .catch(err => {
