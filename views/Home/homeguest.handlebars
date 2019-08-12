@@ -6,10 +6,11 @@
                 Browse our Most Popular Rentals...</p>
             <div class="dropdown-divider"></div>
             <nav class="navbar navbar-dark text-white bg-dark mx-auto">
-                <form method="GET" action="/guest_room_list" class="form-inline col-12 ">
+                <form method="POST" action="/guest_room_list" class="form-inline col-12 ">
+
                     <div class="form-row col-8">
-                        <select id="inputState" class="form-control col">
-                            <option selected>Select Your City...</option>
+
+                        <select id="inputState" name="selectedCity" class="form-control col">
                             <option> <a class="dropdown-item" href="#">Toronto</a></option>
                             <option> <a class="dropdown-item" href="#">Mississauga</a></option>
                             <option> <a class="dropdown-item" href="#">Brampton</a></option>

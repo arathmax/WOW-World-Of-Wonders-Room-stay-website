@@ -1,6 +1,27 @@
 <div class="container">
 
-    <div class="card-deck ">
+    <div class="col">
+        <div class="card-deck">
+            {{#each allRooms}}
+            <div class="card">
+                <img src="{{this.image}}" class="card-img-top" alt="Room">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.title}}</h5>
+                    <p class="card-text">{{this.description}}</p>
+                    <p class="card-text">
+                        <b>
+                            ${{this.price}}</b></p>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-info col-auto btn-sm">View Room</button>&nbsp;<button
+                        type="button" class="btn col-auto btn-success btn-sm">Book Room</button>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    {{!-- <div class="card-deck ">
         <div class="card">
             <img src="room2.jpg" class="card-img-top" alt="Room">
             <div class="card-body">
@@ -266,5 +287,5 @@
 
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>
