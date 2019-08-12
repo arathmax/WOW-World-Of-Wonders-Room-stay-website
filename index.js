@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 const session = require("express-session");
+const favicon = require("express-favicon");
 
 const url = "mongodb://localhost:27017/wow-data";
 
@@ -39,6 +40,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // // parse application/json
 app.use(bodyParser.json());
+
+app.use(favicon(__dirname + "/public/images/logos/footer-wow-logo.png"));
 
 // Use the session middleware
 app.use(session({ secret: "keyboard cat", cookie: { maxAge: 60000 } }));
