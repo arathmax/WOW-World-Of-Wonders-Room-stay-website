@@ -24,8 +24,14 @@ router.get("/user", (req, res) => {
 router.get("/admin_login", (req, res) => {
   res.render("Admin/adminlogin");
 });
-router.get("/admin_page", (req, res) => {
-  res.render("Admin/roomlist");
+router.post("/admin_page", (req, res) => {
+  Rooms.find().then(room => {
+    //user!=null, means that an actual user object was returned
+
+    res.render("Admin/roomlist", {
+      allRooms: room
+    });
+  });
 });
 
 // GUEST ROOM LIST VIEW
