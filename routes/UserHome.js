@@ -5,7 +5,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 
 const User = mongoose.model("users", userSchema);
-module.exports = router;
+
 router.post("/", (req, res) => {
   const errors = [];
 

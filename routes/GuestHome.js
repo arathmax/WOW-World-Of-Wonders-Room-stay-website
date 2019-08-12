@@ -21,5 +21,8 @@ router.get("/user", (req, res) => {
 router.get("/admin_login", (req, res) => {
   res.render("Admin/adminlogin");
 });
+router.get("/admin_page", (req, res) => {
+  res.render("Admin/roomlist");
+});
 
 module.exports = router;

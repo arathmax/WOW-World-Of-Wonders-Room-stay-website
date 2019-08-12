@@ -1,12 +1,17 @@
+{{#each errors}}
+<div class="error"> {{this}} </div>
+{{/each}}
 <div class="col-4 bg-dark rounded mx-auto text-white">
-  <form method="GET" action="/admin_page" class="px-4 py-5">
+  <form method="POST" action="/admin_page" class="px-4 py-5">
     <div class="form-group">
-      <label for="exampleDropdownFormEmail1">Admin Username</label>
-      <input type="text" class="form-control" placeholder="Enter Username">
+      <label>Admin Username</label>
+      <input type="text" name="username" id="username" value="{{username}}" class="form-control"
+        placeholder="Enter Username">
     </div>
     <div class="form-group">
-      <label for="exampleDropdownFormPassword1">Admin Password</label>
-      <input style="margin-bottom: 2em;" type="password" class="form-control" placeholder="Enter Password">
+      <label>Admin Password</label>
+      <input style="margin-bottom: 2em;" type="password" name="password" class="form-control"
+        placeholder="Enter Password">
     </div>
     <button type="submit" class="btn btn-outline-danger btn-block btn-sm">Sign
       in as Administrator</button>
