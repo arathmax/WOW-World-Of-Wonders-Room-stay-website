@@ -1,0 +1,34 @@
+<div class="container">
+    <form method="POST" action="/add_room>
+        <div class=" form-group">
+        <label>Room Title*</label>
+        <input type="text" name="title" class="form-control" placeholder="Enter the title for the room" required>
+</div>
+<div class="form-group">
+    <label>Room Price*</label>
+    <input type="number" name="price" class="form-control" placeholder="Enter the price for the room" Required>
+</div>
+<div class="form-group">
+    <label>Select City</label>
+    <select class="form-control" name="city">
+        <option>Toronto</option>
+        <option>Brampton</option>
+        <option>Mississauga</option>
+    </select>
+</div>
+<form>
+    <div class="form-group">
+        <label for="exampleFormControlFile1">Upload Room Image</label>
+        <input type="file" name="image" class="form-control-file">
+    </div>
+</form>
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">Room description*</label>
+    <textarea name="description" class="form-control" rows="3"></textarea>
+</div>
+{{#each errors}}
+<div class="error"> {{this}} </div>
+{{/each}}
+<button type="submit" class="btn btn-secondary btn-sm btn-block"><b>ADD THIS ROOM</b></button>
+</form>
+</div>

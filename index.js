@@ -21,6 +21,7 @@ mongoose
 //import routes
 const adminLoginRoute = require("./routes/AdminLogin");
 const adminPageRoute = require("./routes/AdminPage");
+const addRoomPageRoute = require("./routes/AddRoom");
 
 const guestHomeRoute = require("./routes/GuestHome");
 // const guestViewRoomRoute = require("./routes/GuestViewRoom");
@@ -73,6 +74,7 @@ app.use("/user_room_list", userRoomListRoute);
 
 app.use("/admin_login", adminLoginRoute);
 app.use("/admin_page", adminPageRoute);
+app.use("/add_room", addRoomPageRoute);
 
 const port = 3000;
 app.listen(port, () => {

@@ -56,4 +56,8 @@ router.post("/user_room_list", (req, res) => {
   });
 });
 
+router.get("/add_Room", (req, res) => {
+  res.render("Admin/addroom");
+});
+
 module.exports = router;
